@@ -2,6 +2,11 @@ const { DataTypes } = require('sequelize');
 const { Sequelize } = require('../sqlQuery');
 
 const User = SequelizeInstance.define('user', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    },
     display_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -23,5 +28,4 @@ const User = SequelizeInstance.define('user', {
     ]
 });
 
-User.sync({ alter: true });
 module.exports = User;

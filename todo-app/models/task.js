@@ -13,10 +13,6 @@ const Task = SequelizeInstance.define('Task', {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
     },
-    user: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
     description: {
         type: DataTypes.TEXT,
     },
@@ -25,5 +21,4 @@ const Task = SequelizeInstance.define('Task', {
     },
 });
 
-Task.sync({ alter: true });
 module.exports = Task;

@@ -5,6 +5,7 @@ var logger = require('morgan');
 const dotenv = require('dotenv');
 dotenv.config();
 const cors = require('cors')
+require('./models/models');
 
 const Task = require('./models/task');
 const User = require('./models/user');

@@ -1,6 +1,13 @@
-const {sequelize} = require('sequelize');
-const {User} = require('./user');
-const {Task} = require('./task');
+const { Sequelize } = require('../sqlQuery');
+const User = require('./user');
+const Task = require('./task');
 
-User.hasMany(Task, {foreignKey: 'user_id'});
+User.hasMany(Task);
 Task.belongsTo(User);
+
+SequelizeInstance.sync({alter: true});
+
+module.exports = {
+    User,
+    Task,
+}

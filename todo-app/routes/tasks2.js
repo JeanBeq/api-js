@@ -11,9 +11,6 @@ router.use(middleWare.authentificationMiddleware);
 
 // todo liste
 router.get('/all', function(req, res, next) {
-    const offset = (page - 1) * limit;
-    const page = parseInt(req.query.page) || 1;
-
     try {
         Task.findAll().then(tasks => {
             res.json(tasks);
