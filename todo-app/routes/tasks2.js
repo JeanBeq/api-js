@@ -20,6 +20,15 @@ router.get('/all', function(req, res, next) {
     }
 });
 
+router.get('/all/async',async function(req, res, next) {
+    try {
+        const tasks = await Task.findAll();
+        res.json(tasks);
+    } catch (exception) {
+        console.error(exception);
+    }
+});
+
 router.get('/filtered',async function(req, res) {
     const tasks = await Task.findAll({
         where: {
@@ -36,15 +45,6 @@ router.get('/filtered',async function(req, res) {
 
     res.json(tasks);
 })
-
-router.get('/all/async',async function(req, res, next) {
-    try {
-        const tasks = await Task.findAll();
-        res.json(tasks);
-    } catch (exception) {
-        console.error(exception);
-    }
-});
 
 router.get('/task/:id',async function(req, res, next) {
     try {
