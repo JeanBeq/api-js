@@ -14,7 +14,7 @@ const Task = SequelizeInstance.define('Task', {
         defaultValue: false,
     },
     user: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     description: {

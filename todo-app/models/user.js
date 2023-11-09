@@ -5,12 +5,10 @@ const User = SequelizeInstance.define('user', {
     display_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
         validate: {
             isEmail: true,
         },
@@ -19,6 +17,10 @@ const User = SequelizeInstance.define('user', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+},{
+    indexes: [
+        {unique: true, fields: ['email']},
+    ]
 });
 
 User.sync({ alter: true });

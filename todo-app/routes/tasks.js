@@ -37,7 +37,7 @@ router.get('/', function(req, res, next) {
         filters.push('user = ?');
         filterValues.push(createdByFilter);
         filters.push('user = ?');
-        filterValues.push(userId);
+        filterValues.push(req.user.id);
     }
 
     if (filters.length > 0) {

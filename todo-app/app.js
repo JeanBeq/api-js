@@ -11,6 +11,7 @@ const User = require('./models/user');
 
 var indexRouter = require('./routes/index');
 var tasksRouter = require('./routes/tasks');
+var tasks2Router = require('./routes/tasks2');
 var userRouter = require('./routes/user');
 
 var app = express();
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/tasks', tasksRouter);
+app.use('/tasks2', tasks2Router);
 app.use('/user', userRouter);
 
 module.exports = app;
